@@ -3,11 +3,11 @@ import { Alexa } from 'jovo-platform-alexa';
 import { JovoDebugger } from 'jovo-plugin-debugger';
 import { FileDb } from 'jovo-db-filedb';
 import { GoogleAssistant } from 'jovo-platform-googleassistant';
-import { Login } from './ModuloLogin/login';
-import { Consultar } from './ModuloConsultar/consultar';
-import { Insertar } from './ModuloInsertar/Insertar';
-import { Modificar } from './ModuloModificar/modificar';
-import { Eliminar } from './ModuloEliminar/eliminar';
+import { Login } from './Intencion/login';
+import { Consultar } from './Intencion/consultar';
+import { Insertar } from './Intencion/Insertar';
+import { Modificar } from './Intencion/modificar';
+import { Eliminar } from './Intencion/eliminar';
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
@@ -39,6 +39,8 @@ app.setHandler({
         this.ask(speech, reprompt);
     },
 
+
+    ///--------- Intenciones Generales----------
     LoginIntent() {
         const cedula = this.$inputs.cedula.value;
         login.ingresar(cedula, this);
@@ -65,6 +67,16 @@ app.setHandler({
         eliminar.suprimir(tabla, this);
 
     },
+    ///-------------- Intenciones de ventas------
+    // Estas Intenciones son especificas del modulo de ventas
+
+    ConsultarVentasIntent() { },
+    ModificarVentasConParametrosIntent() { },
+    EliminarVentasIntent() { },
+    InsertarVentasConParametrosIntent() { },
+    ConsultarVentasParametrosIntent() { },
+
+
 
     Unhandled() {
         this.toIntent('LAUNCH');

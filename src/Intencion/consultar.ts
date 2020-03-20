@@ -1,19 +1,20 @@
 import { Jovo } from "jovo-framework";
+import { Ventas } from "../ModuloVentas/Ventas";
 
-
+const ventas = new Ventas();
 export class Consultar {
 
      /**
       * Metodo que se encarga de consultar una tabla
       */
      async consultar(tabla: string, jovo: Jovo) {
-          let speech = 'La cedula ingresada es: ';
+          let speech = ' ';
           let reprompt = '';
 
           if (tabla === 'ventas') {
-
-               speech = 'Vas a consultar ventas';
-               reprompt = '?';
+               //ventas.consultar();
+               speech = 'Que desea consultar de ventas?, opcion1, opcion2, opcion3';
+               reprompt = 'Que desea consultar de ventas?, opcion1, opcion2, opcion3';
                jovo.ask(speech, reprompt);
 
           } else if (tabla === 'clientes') {
