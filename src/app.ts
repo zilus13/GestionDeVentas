@@ -50,31 +50,34 @@ app.setHandler({
         const codigoValidacion = this.$inputs.codigo.value;
         login.validar(codigoValidacion, this);
     },
-    ConsultarIntent() {
-        const tabla = this.$inputs.tabla.value;
-        consultar.consultar(tabla, this);
-    },
-    AgregarIntent() {
-        const tabla = this.$inputs.tabla.value;
-        insertar.agregar(tabla, this);
-    },
-    ModificarIntent() {
-        const tabla = this.$inputs.tabla.value;
-        modificar.cambiar(tabla, this);
-    },
-    EliminarIntent() {
-        const tabla = this.$inputs.tabla.value;
-        eliminar.suprimir(tabla, this);
 
+    async ConsultarIntent() {
+        const tabla = this.$inputs.tabla.value;
+        console.log("gooooooooo:: " + tabla);
+
+        await consultar.consultar(tabla, this);
     },
+    // AgregarIntent() {
+    //     const tabla = this.$inputs.tabla.value;
+    //     insertar.agregar(tabla, this);
+    // },
+    // ModificarIntent() {
+    //     const tabla = this.$inputs.tabla.value;
+    //     modificar.cambiar(tabla, this);
+    // },
+    // EliminarIntent() {
+    //     const tabla = this.$inputs.tabla.value;
+    //     eliminar.suprimir(tabla, this);
+
+    // },
     ///-------------- Intenciones de ventas------
     // Estas Intenciones son especificas del modulo de ventas
 
-    ConsultarVentasIntent() { },
-    ModificarVentasConParametrosIntent() { },
-    EliminarVentasIntent() { },
-    InsertarVentasConParametrosIntent() { },
-    ConsultarVentasParametrosIntent() { },
+    // ConsultarVentasIntent() { },
+    // ModificarVentasConParametrosIntent() { },
+    // EliminarVentasIntent() { },
+    // InsertarVentasConParametrosIntent() { },
+    // ConsultarVentasParametrosIntent() { },
 
 
 

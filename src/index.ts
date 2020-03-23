@@ -7,7 +7,7 @@ import { app } from './app';
 
 // ExpressJS (Jovo Webhook)
 if (process.argv.indexOf('--webhook') > -1) {
-    const port = process.env.JOVO_PORT || 4000;
+    const port = process.env.JOVO_PORT || 3000;
     Webhook.jovoApp = app;
 
     Webhook.listen(port, () => {

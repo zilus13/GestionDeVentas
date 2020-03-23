@@ -12,10 +12,8 @@ export class Consultar {
           let reprompt = '';
 
           if (tabla === 'ventas') {
-               //ventas.consultar();
-               speech = 'Que desea consultar de ventas?, opcion1, opcion2, opcion3';
-               reprompt = 'Que desea consultar de ventas?, opcion1, opcion2, opcion3';
-               jovo.ask(speech, reprompt);
+               const respuesta = await ventas.consultar(jovo);
+
 
           } else if (tabla === 'clientes') {
 
